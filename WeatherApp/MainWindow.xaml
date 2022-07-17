@@ -1,0 +1,110 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaetherApp"
+        mc:Ignorable="d"
+        Title="Weather App" Height="700" Width="1035" Icon="/default.png" ResizeMode="CanMinimize">
+
+    <Window.Background>
+
+        <ImageBrush ImageSource="Images/Cities/Muenchen.jpg"/>
+
+    </Window.Background>
+
+    <DockPanel LastChildFill="true" Margin="0,0,0,0">
+
+        <Canvas DockPanel.Dock="Bottom" Height="258" Background="#FF313A4B">
+
+            <TextBlock x:Name="tb_today" Canvas.Left="69" TextWrapping="Wrap" Text="Today" Canvas.Top="10" FontSize="28" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_humidity_today" Canvas.Left="18" TextWrapping="Wrap" Text="-" Canvas.Top="194" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_windspeed_today" Canvas.Left="17" TextWrapping="Wrap" Text="-" Canvas.Top="222" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_celsius_today" Canvas.Left="100" TextWrapping="Wrap" Text="-" Canvas.Top="82" FontSize="36" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <Image x:Name="imageToday" Height="76" Canvas.Left="14" Canvas.Top="68" Width="76" Source="/default.png" RenderTransformOrigin="0.664,0.565" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Canvas Height="258" Width="828" HorizontalAlignment="Left" Canvas.Left="207" VerticalAlignment="Center" Background="#FF4C5D73">
+                <Grid Height="258" Width="828" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="tb_day1" HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Height="27" Width="133"/>
+                    <TextBlock x:Name="tb_day2" HorizontalAlignment="Left" Margin="7,16,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="1" Height="27" Width="128"/>
+                    <TextBlock x:Name="tb_day3" HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="2" Height="26" Width="127"/>
+                    <TextBlock x:Name="tb_day4" HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="3" Height="27" Width="127"/>
+                    <TextBlock x:Name="tb_day5" HorizontalAlignment="Left" Margin="3,16,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="4" Height="27" Width="127"/>
+                    <Image x:Name="imageDay1" HorizontalAlignment="Left" Height="57" Margin="16,59,0,0" VerticalAlignment="Top" Width="57" Source="/default.png"/>
+                    <Image x:Name="imageDay2" HorizontalAlignment="Left" Height="56" Margin="4,66,0,0" VerticalAlignment="Top" Width="58" Source="/default.png" Grid.Column="1"/>
+                    <Image x:Name="imageDay3" HorizontalAlignment="Left" Height="56" Margin="10,60,0,0" VerticalAlignment="Top" Width="58" Source="/default.png" Grid.Column="2"/>
+                    <Image x:Name="imageDay4" HorizontalAlignment="Left" Height="57" Margin="12,66,0,0" VerticalAlignment="Top" Width="56" Source="/default.png" Grid.Column="3"/>
+                    <Image x:Name="imageDay5" HorizontalAlignment="Left" Height="58" Margin="7,66,0,0" VerticalAlignment="Top" Width="56" Source="/default.png" Grid.Column="4" RenderTransformOrigin="0.484,0.553"/>
+                    <TextBlock x:Name="tb_celsius_day1" HorizontalAlignment="Left" Margin="16,129,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Height="27" Width="47"/>
+                    <TextBlock x:Name="tb_humidity_day1" HorizontalAlignment="Center" Margin="0,202,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="13" Height="19" Width="133"/>
+                    <TextBlock x:Name="tb_windspeed_day1" HorizontalAlignment="Center" Margin="0,226,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="13" Height="19" Width="133"/>
+                    <TextBlock x:Name="tb_celsius_day2" HorizontalAlignment="Left" Margin="3,133,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="1" Height="27" Width="47"/>
+                    <TextBlock x:Name="tb_humidity_day2" HorizontalAlignment="Left" Margin="4,201,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="1" Height="19" Width="134" Grid.ColumnSpan="3"/>
+                    <TextBlock x:Name="tb_windspeed_day2" HorizontalAlignment="Left" Margin="3,226,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Height="19" Width="135" FontSize="13" Grid.ColumnSpan="3"/>
+                    <TextBlock x:Name="tb_celsius_day3" HorizontalAlignment="Left" Margin="10,129,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="2" Height="26" Width="47"/>
+                    <TextBlock x:Name="tb_humidity_day3" HorizontalAlignment="Left" Margin="10,201,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="13" Grid.Column="2" Height="20" Width="127"/>
+                    <TextBlock x:Name="tb_windspeed_day3" HorizontalAlignment="Left" Margin="10,226,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="13" Grid.Column="2" Height="20" Width="127"/>
+                    <TextBlock x:Name="tb_celsius_day4" HorizontalAlignment="Left" Margin="17,134,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="3" Height="27" Width="48"/>
+                    <TextBlock x:Name="tb_humidity_day4" HorizontalAlignment="Center" Margin="0,200,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="13" Grid.Column="3" Height="20" Width="128"/>
+                    <TextBlock x:Name="tb_windspeed_day4" HorizontalAlignment="Center" Margin="0,226,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="13" Grid.Column="3" Height="19" Width="128"/>
+                    <TextBlock x:Name="tb_celsius_day5" HorizontalAlignment="Left" Margin="2,134,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="20" Grid.Column="4" Height="27" Width="47"/>
+                    <TextBlock x:Name="tb_humidity_day5" HorizontalAlignment="Left" Margin="2,202,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="4" Height="18" Width="135"/>
+                    <TextBlock x:Name="tb_windspeed_day5" HorizontalAlignment="Left" Margin="2,225,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="4" Height="18" Width="135"/>
+                    <TextBlock x:Name="tb_description_day1" HorizontalAlignment="Center" Margin="0,173,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Height="19" Width="133"/>
+                    <TextBlock x:Name="tb_description_day2" HorizontalAlignment="Left" Margin="4,173,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="1" Height="19" Width="134"/>
+                    <TextBlock x:Name="tb_description_day3" HorizontalAlignment="Left" Margin="10,174,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="2" Height="18" Width="134"/>
+                    <TextBlock x:Name="tb_description_day4" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="3" Height="19" Width="128"/>
+                    <TextBlock x:Name="tb_description_day5" HorizontalAlignment="Left" Margin="2,173,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.Column="4" Height="19" Width="135"/>
+                </Grid>
+            </Canvas>
+            <TextBlock x:Name="tb_description_today" TextWrapping="Wrap" Text="-" FontSize="24" Foreground="White" HorizontalAlignment="Center" Canvas.Left="18" Canvas.Top="156" VerticalAlignment="Top"/>
+        </Canvas>
+
+        <WrapPanel DockPanel.Dock="Top" Height="108">
+
+            <Grid Height="140" Width="1035">
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="130*" />
+
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="Btn_Dresden" Content="Dresden" Style="{StaticResource DresdenButton}" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Height="49" Width="170" FontSize="20" Foreground="White" Click="Btn_Dresden_Click"/>
+                    <Button x:Name="Btn_Muenchen" Content="Muenchen" Style="{StaticResource MuenchenButton}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="49" Width="170" Grid.Column="1" Margin="0,21,0,0" FontSize="20" Foreground="White" Click="Btn_Muenchen_Click"/>
+                    <Button x:Name="Btn_Heidelberg" Content="Heidelberg" Style="{StaticResource HeidelbergButton}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="49" Width="170" Grid.Column="2" Margin="0,21,0,0" FontSize="20" Foreground="White" Click="Btn_Heidelberg_Click"/>
+                    <Button x:Name="Btn_Hamburg" Content="Hamburg" Style="{StaticResource HamburgButton}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="49" Width="170" Grid.Column="3" Margin="0,21,0,0" FontSize="20" Foreground="White" Click="Btn_Hamburg_Click"/>
+                </Grid>
+
+            </Grid>
+
+        </WrapPanel>
+        <Canvas Width="1035" Height="189" Background="#A5000000">
+            <TextBlock x:Name="tb_current_clock" Canvas.Left="373" TextWrapping="Wrap" Text="12:30:00 PM" Canvas.Top="51" FontSize="48" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_current_date_day" Canvas.Left="378" TextWrapping="Wrap" Text="Monday, 21 February 2022" Canvas.Top="115" FontSize="24" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel Height="189" Width="357" HorizontalAlignment="Left" Canvas.Left="678" VerticalAlignment="Center">
+                <TextBlock x:Name="tb_City" TextWrapping="Wrap" Text="-" FontSize="48" Foreground="White" HorizontalAlignment="Right" Margin="0,50,40,0"/>
+                <TextBlock TextWrapping="Wrap" Text="Germany" FontSize="22" Foreground="White" HorizontalAlignment="Right" Margin="0,0,40,0"/>
+            </StackPanel>
+            <TextBox x:Name="tbox_enter_city_name" Canvas.Left="10" TextWrapping="Wrap" Text="Enter city name" Canvas.Top="57" Width="300" Height="35" BorderBrush="{x:Null}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#B2224154" Foreground="White"/>
+            <TextBox x:Name="tbox_enter_zip_code_of_the_city" Canvas.Left="10" TextWrapping="Wrap" Text="Enter the city zip code" Canvas.Top="100" Width="300" Height="35" BorderBrush="{x:Null}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#B2223754" Foreground="White"/>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Enter another German city" Canvas.Top="8" Foreground="White" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="Btn_search_weather_data_of_city" Style="{StaticResource AnotherCityButton}" Content="Search for weather data" Canvas.Left="10" Canvas.Top="143" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Height="36" BorderBrush="{x:Null}" Foreground="White" FontSize="16" Click="Btn_search_weather_data_of_city_Click"/>
+        </Canvas>
+    </DockPanel>
+
+</Window>
